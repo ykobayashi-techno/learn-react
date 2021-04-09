@@ -14,12 +14,7 @@ export const AddPostForm = () => {
 
   const onSavePostClicked = () => {
     if (title && content) {
-      dispatch(
-        postAdded({
-          title,
-          content,
-        })
-      )
+      dispatch(postAdded(title, content))
 
       //stateの更新。フォームの中身を空にする
       setTitle('')
