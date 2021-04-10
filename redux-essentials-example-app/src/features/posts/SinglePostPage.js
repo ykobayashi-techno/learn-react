@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { PostAuthor } from './PostAuthor'
 
 export const SinglePostPage = ({ match }) => {
-  const { postId, userId } = match.params
+  const { postId } = match.params
 
   const post = useSelector((state) =>
     state.posts.find((post) => post.id === postId)
@@ -22,11 +22,12 @@ export const SinglePostPage = ({ match }) => {
     <section>
       <article className="post">
         <h2>{post.title}</h2>
-        <p className="post-content">{post.content}</p>
-
-        <section>
+        <p className="post-content">
+          {post.content}
           <PostAuthor userId={post.userId}></PostAuthor>
-        </section>
+        </p>
+
+        <section></section>
 
         <Link to={`/editPost/${post.id}`} className="button">
           Edit Post
