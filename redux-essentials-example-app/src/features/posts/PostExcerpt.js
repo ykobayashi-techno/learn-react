@@ -11,7 +11,7 @@ export const PostExcerpt = ({ post }) => {
       <p className="post-content">{post.content.substring(0, 100)}</p>
 
       <div>
-        <PostAuthor userId={post.userId}></PostAuthor>
+        <PostAuthor userId={post.user}></PostAuthor>
         <TimeAgo timestamp={post.date}></TimeAgo>
       </div>
 
