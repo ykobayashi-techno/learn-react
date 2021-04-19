@@ -4,7 +4,7 @@ import { client } from '../../api/client'
 const initialState = []
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-  const response = await client.get('fekeApi/users')
+  const response = await client.get('/fakeApi/users')
   return response.users
 })
 
